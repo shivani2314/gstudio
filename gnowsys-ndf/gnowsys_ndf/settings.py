@@ -370,7 +370,8 @@ USE_I18N = True
 # By defalut, it's 'ascii'
 # Comes handy while writing unicode text into a file
 import sys
-reload(sys)
+from importlib import reload
+importlib.reload(sys)
 sys.setdefaultencoding('utf-8')
 
 # If you set this to False, Django will not format dates, numbers and
