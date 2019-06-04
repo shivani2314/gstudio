@@ -247,7 +247,8 @@ EXTRA_LANG_INFO = {
 
 # Add custom languages not provided by Django
 import django.conf.locale
-LANG_INFO = dict(django.conf.locale.LANG_INFO.items() + EXTRA_LANG_INFO.items())
+LANG_INFO = django.conf.locale.LANG_INFO.copy()
+LANG_INFO.update(EXTRA_LANG_INFO)
 django.conf.locale.LANG_INFO = LANG_INFO
 
 # Languages using BiDi (right-to-left) layout
